@@ -19,9 +19,9 @@ void pharsing() {
           arus += inString1[i];
         }
       }
-      phars1 = true;
-      comComp1 = false;
     }
+    phars1 = true;
+    comComp1 = false;
   }
 
   if (comComp2 == true) { //$frek&{nilai frekuensi}
