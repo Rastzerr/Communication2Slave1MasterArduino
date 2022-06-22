@@ -1,5 +1,7 @@
-String inString1 = "", inString2 = "";
+String inString1 = "", inString2 = "", strData1 = "", strData2 = "";
+String pembagiTegangan = "", arus = "", frek = "", lastString1 = "", lastString2 = "";
 bool comComp1 = false, comComp2 = false;
+float volt, ampere,hz;
 
 void setup() {
   // put your setup code here, to run once:
@@ -9,25 +11,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
-}
-
-void serialEvent() {
-  while (Serial.available()){
-    char inChar = (char)Serial.read();
-    inString1 += inChar;
-    if(inChar == '\n'){
-      comComp1 = true;
-    }
-  }
-}
-
-void serialEvent1() {
-  while (Serial1.available()){
-    char inChar = (char)Serial1.read();
-    inString2 += inChar;
-    if(inChar == '\n'){
-      comComp2 = true;
-    }
-  }
+  pharsing();
+  volt = pembagiTegangan.toFloat();
+  ampere = arus.toFloat();
+  hz = frek.toFloat();
 }
